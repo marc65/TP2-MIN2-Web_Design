@@ -1,0 +1,97 @@
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> TP JavaScript Exo3 </title>
+<link rel="stylesheet" href="fichier_css.css">
+</head>
+<style>
+</style>
+<script language="javascript">
+    function MontantAPayer()
+    {
+        var Champ_Texte_Entree = document.getElementById("Montant_Entree")
+        var Champ_Texte_Plat = document.getElementById("Montant_Plat")
+        var Champ_Texte_Dessert = document.getElementById("Montant_Dessert")
+        var Champ_Texte_Resultat = document.getElementById("Montant_Resultat")
+
+
+        
+
+        var Valeur_Entree = document.getElementById("Entree").value
+        var Valeur_Plat = document.getElementById("Plat").value
+        var Valeur_Dessert = document.getElementById("Dessert").value
+        var Valeur_Resultat = parseFloat(Valeur_Dessert) + parseFloat(Valeur_Entree) + parseFloat(Valeur_Plat)
+
+ 
+        Champ_Texte_Entree.value = Valeur_Entree
+        Champ_Texte_Plat.value = Valeur_Plat
+        Champ_Texte_Dessert.value = Valeur_Dessert
+        Champ_Texte_Resultat.value = Valeur_Resultat
+
+
+    }
+</script>
+
+<body>
+	<header>
+		<img src="epf_logo_new.png" class="logo-epf" alt="Le logo de l'EPF" height="60">
+		<nav>
+			<menu>
+				<li><a href="#" title="Accueil"><img src="house.svg" alt="Une maison stylisée" height="15"></a></li>
+				<li><a href="#">Intégration HTML</a></li>
+				<li><a href="#">CSS</a></li>
+				<li><a href="#">Javascript</a></li>
+				<li><a href="#">PHP</a></li>
+				<li><a href="#">Autres</a></li>
+			</menu>
+		</nav>
+	</header>
+<br>
+    <b>Composez votre menu !</b>
+    <br>
+    <br>
+    <div class ="choix_menu">
+        <p class ="titre">
+            <b>Entrée :</b>
+            <select name="Entree" id="Entree">
+                <option value="9">Tomate-Mozza</option>
+                <option value="15">Salade Cesar</option>
+            </select>
+        </p>       
+    </div>
+    <div class ="choix_menu">
+        <p class ="titre">
+            <b>Plat :</b>
+            <select name="Plat" id="Plat">
+                <option value="22">Gratin dauphinois</option>
+                <option value="13">Pates au pesto</option>
+            </select>
+        </p>       
+    </div>
+    <div class ="choix_menu">
+        <p class ="titre">
+            <b>Dessert :</b>
+            <select name="Dessert" id="Dessert">
+                <option value="15">Cheese cake</option>
+                <option value="8">Fondant au chocolat</option>
+                <option value="7">Tarte citron meuringué</option>
+            </select>
+        </p>       
+    </div>
+    <div>
+        <p>
+            <input type="button" value="Choisir" onclick="MontantAPayer();">
+        </p>
+    </div>
+    <hr>
+
+    <div>
+        <b>Montant à payer :</b><br><br>
+        Entrée :    <output id="Montant_Entree" class ="Montant"> </output><br>
+        Plat :      <output id="Montant_Plat" class ="Montant"></output><br>
+        Dessert :   <output id="Montant_Dessert" class ="Montant"></output><br>
+    </div>
+<hr>
+<b>Montant à Payer : <input type="text" id="Montant_Resultat"></b>
+</body>

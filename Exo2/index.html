@@ -1,0 +1,58 @@
+<html>
+<head>
+<title> TP JavaScript Exo2</title>
+<link rel="stylesheet" href="fichier_css.css">
+<style>
+
+</style>
+
+<script language="javascript">
+    function Calculer_Produit()
+    {
+        var Champ_Texte_Nombre1
+        var Champ_Texte_Nombre2
+        var Champ_Texte_Resultat
+
+        var Valeur_Nombre1
+        var Valeur_Nombre2
+        var Valeur_Resultat
+
+        Champ_Texte_Nombre1 = document.getElementById("nombre1")
+        Champ_Texte_Nombre2 = document.getElementById("nombre2")
+        Champ_Texte_Resultat = document.getElementById("Resultat")
+        
+        Valeur_Nombre1 = parseFloat(Champ_Texte_Nombre1.value) 
+        Valeur_Nombre2 = parseFloat(Champ_Texte_Nombre2.value)        
+        Valeur_Resultat = Valeur_Nombre1 * Valeur_Nombre2
+
+        Champ_Texte_Resultat.value = Valeur_Resultat
+
+
+    }
+</script>
+
+</head>
+<body class ="center">
+    <div>
+        <p class ="text-center">
+            Nombre 1
+        </p>
+        <input type="text" id="nombre1" class ="intput-center">
+    </div>
+    <div>
+        <p class ="text-center">
+            X
+        </p>
+        <p class ="text-center">
+            Nombre 2
+        </p>
+        <input type="text" id="nombre2" class ="intput-center">
+    </div>
+    <br>
+        <input type="button" value="Calculer le Produit" Onclick="Calculer_Produit();" />
+    <br>
+    <input type="text" size="20" id = "Resultat">
+    
+</body>
+
+

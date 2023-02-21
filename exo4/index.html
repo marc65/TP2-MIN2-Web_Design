@@ -1,0 +1,111 @@
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> TP JavaScript Exo4 </title>
+<link rel="stylesheet" href="fichier_css.css">
+</head>
+<style>
+</style>
+
+
+<script language="javascript">
+	
+    function Lire() {
+  var image = document.getElementById("imageAnalyse");
+  var Lien_Source = document.getElementById("Resultat_Source").value;
+  image.src = Lien_Source;
+
+  var Champ_Texte_Bordure = document.getElementById("Resultat_Bordure");
+  var Champ_Texte_Hauteur = document.getElementById("Resultat_Hauteur");
+  var Champ_Texte_Largeur = document.getElementById("Resultat_Largeur");
+  var Champ_Texte_Source = document.getElementById("Resultat_Source");
+  var Champ_Texte_Nom = document.getElementById("Resultat_Nom");
+
+  image.onload = function () {
+    var largeur = this.width;
+    var hauteur = this.height;
+    var bordure = window.getComputedStyle(this).getPropertyValue("border");
+
+    Champ_Texte_Largeur.value = largeur;
+    Champ_Texte_Hauteur.value = hauteur;
+    Champ_Texte_Nom.value = "photo";
+    Champ_Texte_Source.value = this.src;
+    Champ_Texte_Bordure.value = bordure;
+  };
+
+  image.setAttribute("src", Lien_Source);
+}
+	function Ecrire(){
+	var image = document.getElementById("imageAnalyse");
+	var Champ_Texte_Bordure = document.getElementById("Resultat_Bordure").value
+    var Champ_Texte_Hauteur = document.getElementById("Resultat_Hauteur").value
+    var Champ_Texte_Largeur = document.getElementById("Resultat_Largeur").value
+    var Champ_Texte_Source = document.getElementById("Resultat_Source").value
+    var Champ_Texte_Nom = document.getElementById("Resultat_Nom").value
+
+	var modify = document.getElementById('imageAnalyse')
+	modify.setAttribute("width", Champ_Texte_Largeur)
+	modify.setAttribute("height", Champ_Texte_Hauteur)
+	modify.setAttribute("border", Champ_Texte_Bordure)
+	modify.setAttribute("alt", Champ_Texte_Nom)
+
+
+	Champ_Texte_Largeur.value = largeur;
+    Champ_Texte_Hauteur.value = hauteur;
+    Champ_Texte_Nom.value = "photo";
+    Champ_Texte_Source.value = this.src;
+    Champ_Texte_Bordure.value = bordure;
+
+	}
+	</script>
+
+
+<body>
+	<header>
+		<img src="epf_logo_new.png" class="logo-epf" alt="Le logo de l'EPF" height="60"/>
+		<nav>
+			<menu>
+				<li><a href="#" title="Accueil"><img src="house.svg" alt="Une maison stylisée" height="15"/></a></li>
+				<li><a href="#">Intégration HTML</a></li>
+				<li><a href="#">CSS</a></li>
+				<li><a href="#">Javascript</a></li>
+				<li><a href="#">PHP</a></li>
+				<li><a href="#">Autres</a></li>
+			</menu>
+		</nav>
+	</header>
+</body>
+<br>
+<br><br><br>
+<img id = "imageAnalyse">
+
+
+<body>
+    <fieldset>
+        <legend> Propriété d'une image </legend>
+            <input type="submit" value="Lire propriétés" size="20" id="Lire" onclick="Lire()"/>
+			<input type="submit" value="Ecrire propriétés" id="Ecrire" onclick="Ecrire()">
+        <br>
+		Bordure 
+		<br>
+		<input type="text" size="20" id = "Resultat_Bordure">
+		<br>
+		Hauteur 
+		<br>
+		<input type="text" size="20" id = "Resultat_Hauteur">
+		<br>
+		Largeur 
+		<br>
+		<input type="text" size="20" id = "Resultat_Largeur">
+		<br>
+		Nom 
+		<br>
+		<input type="text" size="20" id = "Resultat_Nom">
+		<br>
+		Source 
+		<br>
+		<input type="text" id = "Resultat_Source">
+	</fieldset>
+		
+</body>
